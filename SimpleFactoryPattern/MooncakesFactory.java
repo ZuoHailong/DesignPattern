@@ -1,12 +1,12 @@
 public class MooncakesFactory {
 
-    public static Mooncakes makeMooncakes(int type) {
+    public static Mooncakes makeMooncakes(String type) {
         Mooncakes mooncakes = null;
         switch (type) {
-        case 1:
+        case "FiveKernel":
             mooncakes = new FiveKernel();
             break;
-        case 2:
+        case "Beansand":
             mooncakes = new Beansand();
             break;
         }
@@ -20,7 +20,7 @@ public class MooncakesFactory {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return (T)mooncakes;
+        return (T) mooncakes;
     }
 
 }
