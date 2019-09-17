@@ -1,20 +1,8 @@
 public class Beansand extends Mooncakes{
 
     @Override
-    public Mooncakes makeWrapper() {
-        System.out.println("豆沙月饼·皮好了");
-        return this;
-    }
-
-    @Override
-    public Mooncakes makeFilling() {
-        System.out.println("豆沙月饼·馅好了");
-        return this;
-    }
-
-    @Override
-    public void makeMooncakes() {
-        System.out.println("豆沙月饼·吃吧\n");
+    public void eat() {
+        System.out.println("吃一个豆沙月饼");
     }
 
 }
