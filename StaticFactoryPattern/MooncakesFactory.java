@@ -1,6 +1,6 @@
 public class MooncakesFactory {
 
-    public static Mooncakes makeMooncakes(String type) {
+public static Mooncakes makeMooncakes(String type) {
         Mooncakes mooncakes = null;
         switch (type) {
         case "FiveKernel":
