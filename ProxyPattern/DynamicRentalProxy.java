@@ -14,19 +14,9 @@ public class DynamicRentalProxy implements InvocationHandler{
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        // 反射得到被代理类
+        // 反射得到代理对象
         Object obj =  method.invoke(object, args);
         return obj;
-    }
-
-    public <T extends IRentTest> T get(Class<T> clz) {
-        IRentTest mooncakes = null;
-        try {
-            mooncakes = (IRentTest) Class.forName(clz.getName()).newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return (T) mooncakes;
     }
 
 }

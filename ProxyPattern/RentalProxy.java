@@ -11,17 +11,13 @@ public class RentalProxy implements IRent{
 
     @Override
     public boolean lookHouse(House house) {
-        if(house.getPrice() > 3000){
-            System.out.println("太贵了");
+
+        if(house.getArea() < 50){
+            System.out.println("太小了，不符合小A的要求，不用通知小A去看房了");
             return false;
         }
 
-        if(house.getArea() < 30){
-            System.out.println("太小了");
-            return false;
-        }
-
-        // 执行被代理人的真实逻辑
+        // 执行代理对象的真实逻辑
         return rent.lookHouse(house);
     }
 
