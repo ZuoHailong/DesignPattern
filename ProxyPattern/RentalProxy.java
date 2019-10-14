@@ -1,29 +1,29 @@
 /**
  * 静态代理 —— 租赁代理
  */
-public class RentalProxy implements IRent{
+public class RentalProxy implements IRent {
 
-    private IRent rent;
+    private IRent mRent;
 
-    public RentalProxy(IRent rent){
-        this.rent = rent;
+    public RentalProxy(IRent mRent) {
+        this.mRent = mRent;
     }
 
     @Override
     public boolean lookHouse(House house) {
 
-        if(house.getArea() < 50){
-            System.out.println("太小了，不符合小A的要求，不用通知小A去看房了");
+        if (house.getArea() < 50) {
+            System.out.println("太小了，不符合小A的要求，不用通知小A去看房" + house.getName() + "了");
             return false;
         }
 
         // 执行代理对象的真实逻辑
-        return rent.lookHouse(house);
+        return mRent.lookHouse(house);
     }
 
     @Override
     public void signContract() {
-        rent.signContract();
+        mRent.signContract();
     }
 
 }

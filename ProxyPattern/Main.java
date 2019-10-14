@@ -6,10 +6,10 @@ public class Main {
     public static void main(String[] args) {
 
         House houseM = new House();
-        houseM.setArea(40F).setPrice(2500F);
+        houseM.setName("M").setArea(40F).setPrice(2500F);
 
         House houseN = new House();
-        houseN.setArea(60F).setPrice(4000F);
+        houseN.setName("N").setArea(60F).setPrice(4000F);
 
         /*
          * 静态代理
@@ -18,13 +18,17 @@ public class Main {
         MrA mrA = new MrA();
         // 委托对象
         RentalProxy rentalProxy = new RentalProxy(mrA);
-        rentalProxy.lookHouse(houseM);
-        rentalProxy.lookHouse(houseN);
+        if(rentalProxy.lookHouse(houseM)){
+            rentalProxy.signContract();
+        };
+        if(rentalProxy.lookHouse(houseN)){
+            rentalProxy.signContract();
+        };
 
         /*
          * 动态代理
          */
-        InvocationHandler invocationHandler = new DynamicRentalProxy(mrA);
+        InvocationHandler invocationHandler = new DynamicPurchasing(mrA);
         IRent rent = (IRent) getProxyInstance(mrA.getClass(), invocationHandler);
         if (rent != null) {
             rent.lookHouse(houseM);

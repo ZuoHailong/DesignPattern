@@ -1,9 +1,9 @@
-public class MrA implements IRent{
-    
+public class MrA implements IRent {
+
     @Override
-    public boolean lookHouse(House house){
+    public boolean lookHouse(House house) {
         // 代理对象执行实际的业务
-        System.out.println("小A去看了房子");
+        System.out.println("小A去看了房子" + house.getName());
         return true;
     }
 
