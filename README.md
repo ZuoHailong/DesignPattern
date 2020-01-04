@@ -15,3 +15,5 @@
 ### 结构型设计模式
 [Java 设计模式之代理模式](https://blog.csdn.net/hailong0529/article/details/102546989)
 
+[Java 设计模式之外观模式](https://blog.csdn.net/hailong0529/article/details/103813125)
+
